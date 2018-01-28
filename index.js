@@ -1,20 +1,20 @@
 // Discord.js bot
-const Discord = require('discord.js');
-const client = new Discord.Client();
+// const Discord = require('discord.js');
+// const client = new Discord.Client();
 
-client.on('ready', () => {
-    client.user.setGame('https://git.io/d.js-heroku');
-});
+// client.on('ready', () => {
+//     client.user.setGame('https://git.io/d.js-heroku');
+// });
 
-client.on('message', msg => {
-    if (!msg.content.startsWith(process.env.PREFIX) || !msg.guild) return;
-    const command = msg.content.split(' ')[0].substr(process.env.PREFIX.length);
-    const args = msg.content.split(' ').slice(1).join(' ');
-    if (command === 'guide') return msg.channel.send('https://git.io/d.js-heroku');
-    else if (command === 'invite') return msg.channel.send(process.env.INVITE);
-});
+// client.on('message', msg => {
+//     if (!msg.content.startsWith(process.env.PREFIX) || !msg.guild) return;
+//     const command = msg.content.split(' ')[0].substr(process.env.PREFIX.length);
+//     const args = msg.content.split(' ').slice(1).join(' ');
+//     if (command === 'guide') return msg.channel.send('https://git.io/d.js-heroku');
+//     else if (command === 'invite') return msg.channel.send(process.env.INVITE);
+// });
 
-client.login(process.env.TOKEN);
+// client.login(process.env.TOKEN);
 
 // Web app (Express + EJS)
 const http = require('http');
@@ -43,6 +43,6 @@ app.listen(port, () => {
 });
 
 // pings server every 15 minutes to prevent dynos from sleeping
-setInterval(() => {
- http.get('http://discordjs-heroku.herokuapp.com');
-}, 900000);
+// setInterval(() => {
+//  http.get('http://discordjs-heroku.herokuapp.com');
+// }, 900000);
