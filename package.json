@@ -26,6 +26,6 @@
   "homepage": "https://github.com/everyoneselectronic/dee-dee-speaking-clock-v2#readme",
   "dependencies": {
     "express": "^4.16.2",
-    "sinch-rtc": "^1.4.7"
+    "sinch-rest-api": "0.0.17"
   }
 }
