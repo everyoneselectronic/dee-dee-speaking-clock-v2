@@ -68,10 +68,10 @@ const port = process.env.PORT || 5000;
 app.use(express.static(__dirname + '/public'));
 
 // set the home page route
-app.get('/', (request, response) => {
-    // ejs render automatically looks in the views folder
-    response.render('index');
-});
+// app.get('/', (request, response) => {
+//     // ejs render automatically looks in the views folder
+//     response.render('index.html');
+// });
 
 app.listen(port, () => {
     // will echo 'Our app is running on http://localhost:5000 when run locally'
