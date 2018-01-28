@@ -26,6 +26,6 @@
   "homepage": "https://github.com/everyoneselectronic/dee-dee-speaking-clock-v2#readme",
   "dependencies": {
     "ejs": "^2.5.7",
-    "express": "^4.16.1"
+    "express": "^4.16.2"
   }
 }
