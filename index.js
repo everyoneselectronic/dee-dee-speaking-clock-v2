@@ -14,9 +14,9 @@ const port = process.env.PORT || 8080;
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/audio'));
 
-// app.get('/',function(req,res){
-  
-// });
+app.get('/',function(req,res){
+    res.sendFile('index.html');
+});
 
 // app.listen(port, () => {
 //     // will echo 'Our app is running on https://localhost:5000 when run locally'
