@@ -17,39 +17,39 @@
 // client.login(process.env.TOKEN);
 
 // Sinch app
-var SinchClient = require('sinch-rtc');
+// var SinchClient = require('sinch-rtc');
 
-var sinchClient = new SinchClient({
-    applicationKey: '4c11bcda-d3c8-4fa5-ab03-31bab8e43f4e',
-    capabilities: {calling: true},
-    //supportActiveConnection: true,
-});
+// var sinchClient = new SinchClient({
+//     applicationKey: '4c11bcda-d3c8-4fa5-ab03-31bab8e43f4e',
+//     capabilities: {calling: true},
+//     //supportActiveConnection: true,
+// });
 
-callClient.addEventListener({
-    onIncomingCall: function(incomingCall) {
-        //Play some groovy tunes & show UI
-        ...
-        //Add event listeners to the new call object representing the incoming call
-        incomingCall.addEventListener(callListeners);
-    }
-});
+// callClient.addEventListener({
+//     onIncomingCall: function(incomingCall) {
+//         //Play some groovy tunes & show UI
+//         ...
+//         //Add event listeners to the new call object representing the incoming call
+//         incomingCall.addEventListener(callListeners);
+//     }
+// });
 
 
-var callListeners = {
-    onCallProgressing: function(call) {
-        $('audio#ringback').prop("currentTime",0); //Ensure ringback start from beginning
-        $('audio#ringback').trigger("play"); //Play ringback when call is progressing
-    },
-    onCallEstablished: function(call) {
-        $('audio#ringback').trigger("pause"); //End ringback
-        $('audio#incoming').attr('src', call.incomingStreamURL); //Connect incoming stream to audio element
-    },
-    onCallEnded: function(call) {
-        $('audio#ringback').trigger("pause"); //End the ringback
-        $('audio#incoming').attr('src', ''); //Ensure no incoming stream is playing
-        //Optional: Enable user interface to make another call
-    }
-}
+// var callListeners = {
+//     onCallProgressing: function(call) {
+//         $('audio#ringback').prop("currentTime",0); //Ensure ringback start from beginning
+//         $('audio#ringback').trigger("play"); //Play ringback when call is progressing
+//     },
+//     onCallEstablished: function(call) {
+//         $('audio#ringback').trigger("pause"); //End ringback
+//         $('audio#incoming').attr('src', call.incomingStreamURL); //Connect incoming stream to audio element
+//     },
+//     onCallEnded: function(call) {
+//         $('audio#ringback').trigger("pause"); //End the ringback
+//         $('audio#incoming').attr('src', ''); //Ensure no incoming stream is playing
+//         //Optional: Enable user interface to make another call
+//     }
+// }
 
 
 // Web app (Express + EJS)
