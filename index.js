@@ -65,8 +65,13 @@ const port = process.env.PORT || 5000;
 // app.set('view engine', 'ejs');
 
 // make express look in the `public` directory for assets (css/js/img)
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname + '/audio'));
 
+app.get('/',function(req,res){
+  res.sendFile(path.join(__dirname+'/index.html'));
+  //__dirname : It will resolve to your project folder.
+});
 // set the home page route
 // app.get('/', (request, response) => {
 //     // ejs render automatically looks in the views folder
