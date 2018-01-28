@@ -1,43 +1,19 @@
-// Web app (Express + EJS)
-const https = require('https');
-const express = require('express');
-const app = express();
+// node app.js
+// ngrok http 5500
+// http://localhost:4040/
 
-// set the port of our application
-// process.env.PORT lets the port be set by Heroku
-const port = process.env.PORT || 8080;
-
-// set the view engine to ejs
-// app.set('view engine', 'ejs');
-
-// make express look in the `public` directory for assets (css/js/img)
-app.use(express.static(__dirname + '/views'));
-app.use(express.static(__dirname + '/audio'));
-app.use(express.static(__dirname + '/scripts'));
-
-// app.get('/',function(req,res){
-  
-// });
-
-// app.listen(port, () => {
-//     // will echo 'Our app is running on https://localhost:5000 when run locally'
-//     console.log('Our app is running on https://localhost:' + port);
-// });
-
-// pings server every 15 minutes to prevent dynos from sleeping
-setInterval(() => {
- https.get('https://dee-dee-speaking-clock-v2.herokuapp.com/');
-}, 900000);
-
+var port = process.env.PORT || 8080;
     
-var baseUrl = "#href[https://dee-dee-speaking-clock-v2.herokuapp.com/";
+var baseUrl = "#href[http://test.everyoneselectronic.co.uk/limmy/";
 
 var responsedata = {
     "Instructions": [],
     "Action": {}
 };
 
-app.get('/',function(request,response){
+var https = require('https')
+
+var server = https.createServer(function (request, response) {
     var data = '';
     
     request.on('data', function (chunk) {
@@ -49,7 +25,9 @@ app.get('/',function(request,response){
         var requestModel;
         if (data == '')
         {
-            response.sendFile('index.html');
+            response.writeHead(301,
+              {Location: 'http://www.everyoneselectronic.co.uk/work/dee-dee-speaking-clock'}
+            );
             response.end();
             // response.writeHead(500, { 'Content-Type': 'application/json' });
             // response.end('{"message":"no data posted"}');
@@ -67,7 +45,7 @@ app.get('/',function(request,response){
     });
 
 });
-app.listen(port);
+server.listen(port);
 
 function makeAudioObject(a) {
     var str = baseUrl + a + ".wav]";
