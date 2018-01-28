@@ -29,12 +29,12 @@ setInterval(() => {
 }, 900000);
 
 
-var sinchApi = require('sinch-rest-api')({
-        key: '3078d38c-2e7c-47ca-8ae9-077642e6566a', 
-        secret: 'NWuxxRzx8UOT2v0qgRSwuA=='
-    }); 
+// var sinchApi = require('sinch-rest-api')({
+//         key: '3078d38c-2e7c-47ca-8ae9-077642e6566a', 
+//         secret: 'NWuxxRzx8UOT2v0qgRSwuA=='
+//     }); 
 
-sinchApi.calling.placeCall({number: '+447708763203'});
+// sinchApi.calling.placeCall({number: '+447708763203'});
 
     
 // var baseUrl = "#href[https://dee-dee-speaking-clock-v2.herokuapp.com/";
