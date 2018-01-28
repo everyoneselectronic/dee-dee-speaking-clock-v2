@@ -69,8 +69,8 @@ app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/audio'));
 
 app.get('/',function(req,res){
-  res.sendFile(path.join(__dirname+'/index.html'));
-  //__dirname : It will resolve to your project folder.
+  res.sendFile('index.html');
+  //It will find and locate index.html from View or Scripts
 });
 
 app.listen(port, () => {
