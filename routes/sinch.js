@@ -12,7 +12,7 @@ var svamlResponse =
             },
             {
                 "name" : "PlayFiles",
-                "ids" :  ["#href[https://dee-dee-speaking-clock-v2.herokuapp.com/intro.wav"],
+                "ids" :  ["#href[https://dee-dee-speaking-clock-v2.herokuapp.com/intro.wav","#href[https://dee-dee-speaking-clock-v2.herokuapp.com/2h.wav"],
                 "locale" : "en-US"
             }
         ],
