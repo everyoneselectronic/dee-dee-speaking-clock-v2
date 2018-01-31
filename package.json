@@ -1,31 +1,27 @@
 {
   "name": "dee-dee-speaking-clock-v2",
   "version": "1.0.0",
-  "description": "Limmy's Dee Dee Speaking clock",
-  "main": "index.js",
-  "engines": {
-    "node": "8.9.4",
-    "npm": "5.6.0"
-  },
+  "description": "a speaking clock",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/everyoneselectronic/dee-dee-speaking-clock-v2.git"
   },
   "keywords": [
-    "heroku"
+    "clock",
+    "sinch"
   ],
-  "author": "synicalsyntax",
-  "license": "MIT",
+  "author": "Liam Fogerty",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/everyoneselectronic/dee-dee-speaking-clock-v2/issues"
   },
   "homepage": "https://github.com/everyoneselectronic/dee-dee-speaking-clock-v2#readme",
   "dependencies": {
-    "express": "^4.16.2",
-    "sinch-rest-api": "0.0.17"
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
   }
 }
