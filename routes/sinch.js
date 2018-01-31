@@ -46,9 +46,7 @@ var svamlResponse =
     };
 
 router.post('/', function (req, res, next) {
-    //we know its a ICE event since we supress callbacks for other events
-    // set the callerid to the calling number
-    // svamlResponse.action.cli = req.body.cli;
+    // add tell
     //send back the response.
     res.json(svamlResponse);
 });
