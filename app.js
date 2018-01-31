@@ -1,5 +1,5 @@
 // add requires
-var https = require('https');
+// var https = require('https');
 var express = require('express');
 var bodyParser = require('body-parser');
 var router = require('./routes/sinch');
@@ -28,6 +28,6 @@ module.exports = app;
 app.listen(port);
 
 // pings server every 15 minutes to prevent dynos from sleeping
-setInterval(() => {
- https.get('https://dee-dee-speaking-clock-v2.herokuapp.com/');
-}, 900000);
+// setInterval(() => {
+//  https.get('https://dee-dee-speaking-clock-v2.herokuapp.com/');
+// }, 900000);
