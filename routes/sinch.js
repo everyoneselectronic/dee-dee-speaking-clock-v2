@@ -12,15 +12,17 @@ var svamlResponse =
             },
             {
                 "name" : "PlayFiles",
-                "ids" :  [ {"#href[https://dee-dee-speaking-clock-v2.herokuapp.com/intro.wav","#href[https://dee-dee-speaking-clock-v2.herokuapp.com/2h.wav"} ],
+                "ids" :  [ "#href[https://dee-dee-speaking-clock-v2.herokuapp.com/intro.wav" ],
+                "locale" : "en-US"
+            }
+            {
+                "name" : "PlayFiles",
+                "ids" :  [ "#href[https://dee-dee-speaking-clock-v2.herokuapp.com/2h.wav" ],
                 "locale" : "en-US"
             }
         ],
         action: {
-            // "name": "ConnectConf",
-            // "conferenceId": "myconference1",
-            // "cli": "",
-            // "suppressCallbacks": true
+             "name" : "Hangup"
         }
     };
 
