@@ -7,7 +7,7 @@ var svamlResponse =
         instructions: [
             {
                 "name": "Say",
-                "text": "Welcome to the hotline",
+                "text": "The Limmy Clock is undergoing maintenance",
                 "locale": "en-US"
             },
             {
