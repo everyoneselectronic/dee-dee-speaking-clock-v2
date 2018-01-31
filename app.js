@@ -15,6 +15,7 @@ app.use(bodyParser.json());
  
 //add the sinch route 
 app.use('/sinch', router);
+app.use(express.static(__dirname + '/audio'));
 // app.use(express.static(__dirname + '/views'));
 // app.use(express.static(__dirname + '/audio'));
  

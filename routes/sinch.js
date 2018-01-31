@@ -9,6 +9,11 @@ var svamlResponse =
                 "name": "Say",
                 "text": "Welcome to the hotline",
                 "locale": "en-US"
+            },
+            {
+                "name" : "PlayFiles",
+                "ids" :  ["#href[https://dee-dee-speaking-clock-v2.herokuapp.com/intro.wav"],
+                "locale" : "en-US"
             }
         ],
         action: {
