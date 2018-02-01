@@ -77,9 +77,9 @@ router.post('/', function (req, res, next) {
 module.exports = router;
 
 
-function makeAudioURL(a) {
-    var URL = baseURL + a + endURL;
-    audioIDs.push(URL);
+function makeAudioURL(a,u) {
+    var URL = baseURL + u + endURL;
+    a.push(URL);
 };
 
 function tellTime() {
@@ -93,7 +93,7 @@ function tellTime() {
     myHour = myHour % 12 || 12; // Convert hour to 12 hour day, 1-12
 
     // Array of speech, starting with intro. Further sounds will be added to the end.
-    makeAudioURL("intro");
+    makeAudioURL(audioIDs,"intro");
 
     // If it's not on the hour...
     if (myMinute > 0) {
@@ -101,34 +101,34 @@ function tellTime() {
         // If not on a 5 min div, say "just left" or "coming up for"
         if (minuteDivBy5 != roundMinuteDivBy5) {
             if (roundMinuteDivBy5 < minuteDivBy5) {
-                makeAudioURL("justleft");
+                makeAudioURL(audioIDs,"justleft");
                 // console.log("justleft")
             } else {
-                makeAudioURL("comingupfor");
+                makeAudioURL(audioIDs,"comingupfor");
                 // console.log("comingupfor")
             }
         }
 
         // What minute? Past or from?
         if (roundMinuteDivBy5 == 6) { // if half past
-            makeAudioURL("half");
-            makeAudioURL("past");
+            makeAudioURL(audioIDs,"half");
+            makeAudioURL(audioIDs,"past");
             // console.log("half past");
         } else if (roundMinuteDivBy5 == 3) {
-            makeAudioURL("quarter");
-            makeAudioURL("past");
+            makeAudioURL(audioIDs,"quarter");
+            makeAudioURL(audioIDs,"past");
             // console.log("quarter past");
         } else if (roundMinuteDivBy5 == 9) {
-            makeAudioURL("quarter");
-            makeAudioURL("to");
+            makeAudioURL(audioIDs,"quarter");
+            makeAudioURL(audioIDs,"to");
             // console.log("quarter to");
         } else if (roundMinuteDivBy5 > 0 && roundMinuteDivBy5 < 7) {
-            makeAudioURL((roundMinuteDivBy5 * 5) + "m");
-            makeAudioURL("past");
+            makeAudioURL(audioIDs,(roundMinuteDivBy5 * 5) + "m");
+            makeAudioURL(audioIDs,"past");
             // console.log((roundMinuteDivBy5 * 5) + "m past");
         } else if (roundMinuteDivBy5 >= 7 && roundMinuteDivBy5 < 12) {
-            makeAudioURL((60 - (roundMinuteDivBy5 * 5)) + "m");
-            makeAudioURL("to");
+            makeAudioURL(audioIDs,(60 - (roundMinuteDivBy5 * 5)) + "m");
+            makeAudioURL(audioIDs,"to");
             // console.log("etc");
         }
 
@@ -136,14 +136,14 @@ function tellTime() {
 
     // What hour to say? If less than 33 mins, refer to this hour. More, refer to next hour.
     if (myMinute < 33) {
-        makeAudioURL(myHour + "h");
+        makeAudioURL(audioIDs,myHour + "h");
         // console.log(myHour + "h");
     } else {
         if (myHour < 12) {
-            makeAudioURL(myHour + 1 + "h");
+            makeAudioURL(audioIDs,myHour + 1 + "h");
             // console.log(myHour + 1 + "h");
         } else {
-            makeAudioURL("1h");
+            makeAudioURL(audioIDs,"1h");
             // console.log("1h");
         }
     }
