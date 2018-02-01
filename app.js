@@ -29,5 +29,5 @@ app.listen(port);
 // pings server every 15 minutes to prevent dynos from sleeping
 setInterval(() => {
     https.get('https://dee-dee-speaking-clock-v2.herokuapp.com/');
-    console.log("ping");
+    // console.log("ping");
 }, 900000);

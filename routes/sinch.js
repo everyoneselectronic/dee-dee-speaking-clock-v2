@@ -8,7 +8,7 @@ var endURL = ".wav]";
 var svamlResponse;
 
 router.post('/', function (req, res, next) {
-    console.log(req.body.cli);
+    console.log("+" + req.body.cli);
     // add tell
     makeSvamlResponse();
     //send back the response.
