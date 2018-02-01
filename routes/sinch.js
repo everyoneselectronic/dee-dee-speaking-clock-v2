@@ -132,7 +132,7 @@ function tellTime() {
     }
 
     // return IDs to response
-    return audioIDs;
+    return audioIDs.toString();
 };
 
 function makeSvamlResponse() {
@@ -143,7 +143,7 @@ function makeSvamlResponse() {
             instructions: [
                 {
                     "name" : "PlayFiles",
-                    "ids" :  [aIDs],
+                    "ids" :  [ aIDs ],
                     "locale" : "en-US"
                 },
                 {
