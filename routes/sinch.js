@@ -48,29 +48,12 @@ var svamlResponseTest =
         }
     };
 
-var svamlResponse =
-    {
-        instructions: [
-            {
-                "name" : "PlayFiles",
-                "ids" :  [],
-                "locale" : "en-US"
-            },
-            {
-                "name": "Say",
-                "text": "  Brought to you by everyone's electronic dot co dot U K",
-                "locale": "en-US"
-            },
-        ],
-        action: {
-             "name" : "Hangup"
-        }
-    };
+var svamlResponse;
 
 router.post('/', function (req, res, next) {
     console.log(req.body.cli);
     // add tell
-    tellTime();
+    makeSvamlResponse();
     //send back the response.
     res.json(svamlResponse);
 });
@@ -148,6 +131,29 @@ function tellTime() {
         }
     }
 
-    // add IDs to response
-    svamlResponse['Instructions'][0]['ids'].push(audioIDs);
+    // return IDs to response
+    return audioIDs;
 };
+
+function makeSvamlResponse() {
+    var aIDs = tellTime();
+
+    svamlResponse = 
+        {
+            instructions: [
+                {
+                    "name" : "PlayFiles",
+                    "ids" :  [aIDs],
+                    "locale" : "en-US"
+                },
+                {
+                    "name": "Say",
+                    "text": "  Brought to you by everyone's electronic dot co dot U K",
+                    "locale": "en-US"
+                },
+            ],
+            action: {
+                 "name" : "Hangup"
+            }
+        };
+}
