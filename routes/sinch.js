@@ -149,5 +149,5 @@ function tellTime() {
     }
 
     // add IDs to response
-    svamlResponse['Instructions']['ids'].push(audioIDs);
+    svamlResponse['Instructions'][0]['ids'].push(audioIDs);
 };
