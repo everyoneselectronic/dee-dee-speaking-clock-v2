@@ -79,7 +79,7 @@ module.exports = router;
 
 function makeAudioURL(a) {
     var URL = baseUrl + a + endURL;
-    audioIDs.push(URL)
+    audioIDs.push(URL);
 };
 
 function tellTime() {
